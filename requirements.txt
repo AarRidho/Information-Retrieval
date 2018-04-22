@@ -1,0 +1,2 @@
+Sastrawi==1.0.1
+textblob==0.15.1
