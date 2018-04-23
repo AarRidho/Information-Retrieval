@@ -1,7 +1,8 @@
 import math
 from textblob import TextBlob as tb
 from pathlib import Path
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from PySastrawi.src.Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from PySastrawi.src.Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
 #Corpus Path
 p1 = Path('./corpus')
@@ -15,6 +16,9 @@ p2 = Path('./stopwords/stopword_list_tala.txt')
 stemFactory = StemmerFactory()
 stemmer = stemFactory.create_stemmer()
 
+stopFactory = StopWordRemoverFactory()
+stopword = stopFactory.create_stop_word_remover()
+
 tempCorpus = []
 tempTexts = ""
 tempStopWords = []
@@ -27,7 +31,9 @@ with p2.open() as f:
 for s in a:  
     with s.open() as f:
         for line in f:
-            stemOutput = stemmer.stem(line)
+            stopOutput = stopword.remove(line)
+            stemOutput = stemmer.stem(stopOutput)
+            print(stemOutput)
             tempTexts += ' ' + stemOutput
     tempCorpus.append(tempTexts)
     tempTexts = ""
@@ -61,13 +67,16 @@ def idf(word, bloblist):
 def tfidf(word, blob, bloblist):
     return tf(word, blob) * idf(word, bloblist)
 
-for i in range(len(tempCorpus)):
-    tempCorpus[i] = stopWordRemover(tempCorpus[i],tempStopWords)
 
+#Stemmed and filtered corpus right here
 print(tempCorpus)
 
+
+#using textblob for additional filtering
 bloblist = blobers(tempCorpus)
 
+
+#queries
 query = 'rumah anda saya dipecat istri'
 query2 = 'istri anda di rumah'
 query3 = 'rumah saya ada di tangerang selatan'
@@ -75,10 +84,13 @@ query4 = 'rumah aar ada istri'
 query5 = 'istri aar di tilang'
 
 queries = [query]
-#queries = [query,query2,query3,query4,query5]
+#queries = [query,query2,query3,query4,query5] #5 queries example
 
+
+#Stem and filters queries
 for i,q in enumerate(queries):
-    queries[i] = stemmer.stem(q)
+    temp = stopword.remove(q)
+    queries[i] = stemmer.stem(temp)
 
 tempArray = []
 tempArray2 = []
@@ -123,10 +135,12 @@ for q in queries:
             tempArrayQ.append(tfidf)
             
 print(tempArrayQ)
-print(countrs)
 
-dotProduct = []
+print(countrs)  #counter for corpus list
 
+
+#Cosine Similarities
+#deploy to find dotProducts
 def deploy(queryNo, docNo):
     n = queryNo-1
     m = docNo-1
@@ -136,6 +150,7 @@ def deploy(queryNo, docNo):
                 print(i+1,x+1,tempArrayQ[i],tempArray2[i][x],tempArrayQ[i]*tempArray2[i][x])
                 return tempArrayQ[i]*tempArray2[i][x]
 
+#deploy2 to find related document frequencies
 def deploy2(docNo):
     n = docNo-1
     total = 0
@@ -150,9 +165,15 @@ def deploy2(docNo):
 dotTotal=0
 qS = 0
 dS = 0
-for x in range(countrs):
-    dotTotal+=deploy(1,x+1)
 
+#this is Document 1 tf idf
+for x in range(countrs):
+    dotTotal+=deploy(1,x+1) #deploy(query, whichDoc) in this case we use query 1 and doc 1
+
+    #P.S you can control the deploy value to search through docs with defined queries before
+    
+
+#loop to find query frequencies
 total=0
 for x in tempArrayQ:
     total+=x*x
@@ -162,6 +183,7 @@ dS = math.sqrt(deploy2(1))
 print(dS)
 dotS = dotTotal/(qS*dS)
 
+#Cosine Similarity Result
 print(dotS)
         
 
