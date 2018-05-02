@@ -1,8 +1,8 @@
 import math
 from textblob import TextBlob as tb
 from pathlib import Path
-from PySastrawi.src.Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-from PySastrawi.src.Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
 #Corpus Path
 p1 = Path('./corpus')
