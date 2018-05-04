@@ -1,0 +1,1 @@
+Voip pada produk-produk keluaran betamax memiliki kekurangan yaitu membutuhkan bandwith yang cukup besar yaitu minimal kecepatan bandwith 64 kbit/s.updown stream. atau dengan koneksi internet broadband

@@ -1,0 +1,3 @@
+Power on Self-Test yaitu test yang dilakukan oleh PC untuk
+mengecek fungsi-fungsi komponen pendukung PC untuk
+bekerja dengan baik.

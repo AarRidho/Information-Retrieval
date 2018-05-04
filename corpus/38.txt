@@ -1,0 +1,1 @@
+Port Fast adalah sebuah konsep dan konfigurasi dalam switch untuk mempercepat proses Forwarding. Port fast berfungsi untuk mempercepat proses komunikasi antara switch dan perangkat yang terhubung, untuk segera memutuskan proses forwarding. 

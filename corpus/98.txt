@@ -1,0 +1,5 @@
+Universal Serial Bus. Socket yang terdapat di semua PC
+model baru untuk koneksi perangkat-perangkat USB. USB
+mendukung instalasi yang mudah dengan system Plug and
+Play, dan secara bertahap menggantikan port serial dan
+pararel yang lama.

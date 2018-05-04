@@ -1,0 +1,2 @@
+Grafis User Interface telah menjadi begitu umum sehingga beragam antarmuka pengguna
+Pola desain telah muncul. Seperti yang saya catat sebelumnya di buku ini, pola desain adalah abstraksi yang menentukan solusi perancangan untuk desain yang spesifik dan terikat dengan baik.

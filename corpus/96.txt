@@ -1,0 +1,5 @@
+Disk adalah Suatu media penyimpanan data. Yang dimaksud dengan
+disk adalah floppy disk atau hard disk. Sedangkan floppy
+disk adalah disket. Piringan tipis yang dilapisi bahan
+magnetik (oksida besi) yang mampu menyimpan sejumlah
+data atau informasi. 

@@ -1,0 +1,5 @@
+Mendiagnosis permasalahan pengoperasian PC dan peripheral
+merupakan modul teori dan atau praktikum yang membahas tentang
+cara mengenal dan mengidentifikasi pesan/peringatan kesalahan yang
+ditunjukkan oleh Komputer PC sebagai petunjuk adanya permasalahan
+pengoperasian PC dan peripheral.
