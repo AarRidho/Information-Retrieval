@@ -1,0 +1,7 @@
+Basic input output system. Software yang dipasang pada
+chip komputer:untuk mengatur operasi dasar seperti setting
+layar, harddisk, dan booting. Bagian dari sistem operasi
+yang bisa mengidentifikasi set program yang digunakan
+untuk mem-boot komputer, sebelum menempatkan disket
+sistem. BIOS terdapat di ROM (Read Only Memory) dari
+sistem dan umumnya tersimpan secara permanen.

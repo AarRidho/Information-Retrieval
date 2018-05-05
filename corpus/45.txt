@@ -1,0 +1,1 @@
+Definisi objek antarmuka dan tindakan yang diterapkan padanya adalah sebuah langkah penting dalam desain interface. Untuk mencapai hal ini, skenario pengguna diurai dengan cara yang sama seperti yang dijelaskan pada Bab 6. Kata benda (object) dan kata kerja (action) diisolasi untuk membuat daftar objek dan tindakan.

@@ -1,0 +1,1 @@
+Etherchannel adalah sebuah teknologi trunking pada switch cisco catalyst series yang menggabungkan atau menyatukan beberapa link seolah olah menjadi satu link. Hal ini bisa dikatakan sebagai penggabungan port fisikal menjadi 1 port logikal. Etherchannel biasa diterapkan pada Core Layer. 
