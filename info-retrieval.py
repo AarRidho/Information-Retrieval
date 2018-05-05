@@ -132,10 +132,12 @@ for q in queries:
         idf = math.log(len(bloblist)/1 + idf)
         for i, blob in enumerate(bloblistquery):
             tf = blob.words.count(s)
+            print(tf)
             tfidf = tf*idf
             tempArrayQ.append(tfidf)
             
 print(tempArrayQ)
+print(bloblistquery)
 
 print(countrs)  #counter for corpus list
 
