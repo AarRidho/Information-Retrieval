@@ -5,4 +5,5 @@ Stemming, TF IDF, Precision, Recall, M AP
 Python 3:
 From terminal
 `python -m pip install -r requirements.txt`
-`py -m textblob.download_corpora`
+
+`python -m textblob.download_corpora`
