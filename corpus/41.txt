@@ -1,0 +1,1 @@
+Method overriding merupakan method orang tua atau parent  class yang ditulis kembali oleh subclass atau anak dari parent class.Ada beberapa aturan dalam menerapkan aturan method overriding.

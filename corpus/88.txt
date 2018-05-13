@@ -1,0 +1,1 @@
+Layanan yang tersedia antara lain, DHCP, DNS sekolah dan Webserver yang sudah Terpublikasi (Online), FTP, Firewall, NAS, Harddisk user space, Hotspot dan Login User (Khusus untuk perangkat yang mobile bukan workstation), Bandwidth Management, E-learning, Mail-server, Proxy, NTP, Samba, dan masih ada beberapa yang belum bisa disebutkan secara lengkap.

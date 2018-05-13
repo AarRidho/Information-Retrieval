@@ -1,0 +1,1 @@
+Mendesain tampilan muka sama dengan mendesain perangkat lunak, yaitu iteratif. Langkah dalam tahapan desain terjadi dalam beberapa kali tahapan, diuraikan dengan rinci dan sempurna di setiap langkah agar tidak terjadi miss atau kesalahan pada tahap tertentu yang bisa berakibat dan berimbas pada tahapan – tahapan berikutnya.

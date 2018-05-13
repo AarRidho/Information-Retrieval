@@ -1,0 +1,1 @@
+Sistem operasi yang ada didalam Proxmox Server antara lain ada Windows Server, Debian dan Ubuntu. Ketiga operating system virtual ini ada di dalam Linux Proxmox dan di hubungkan secara virtual juga. Kemudian di konfigurasi agar output dari virtual tersebut dapat melalui LAN Card yang ada pada Server tersebut.

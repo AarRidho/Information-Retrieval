@@ -1,0 +1,5 @@
+Central Processing Unit. Unit pemroses utama dalam istilah
+teknik disebut mikroprosesor, sedang dalam pengertian
+umum adalah mesin komputer yaitu casing beserta semua
+isi didalamnya. Pusat pengolahan masukan sehingga
+menghasilkan keluaran. 
