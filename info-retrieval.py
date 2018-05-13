@@ -78,7 +78,7 @@ bloblist = blobers(tempCorpus)
 
 
 #queries
-query = 'rumah anda saya dipecat istri motor'
+query = 'rumah anda saya dipecat rumah istri motor andalan'
 query2 = 'istri anda di rumah'
 query3 = 'rumah saya ada di tangerang selatan'
 query4 = 'rumah aar ada istri'
@@ -100,12 +100,13 @@ tempIdf2 = []
 for q in queries:
     print('\nquery:', q)
     qsplit = q.split()
+    print("qsplit: "+str(qsplit))
     for x,s in enumerate(qsplit):
         counter = 0
         idf = sum(1 for blob in bloblist if s in blob.words)
-        print(idf)
         idf = math.log(len(bloblist)/(1 + idf))
         tempIdf.append(idf)
+        IDF=idf
         print('idf(', s,'): ', idf)
         print(s,'\ntf:')
         for i, blob in enumerate(bloblist):
@@ -120,6 +121,7 @@ for q in queries:
     print('\n')
     tempIdf2.append(tempIdf)
 
+print("tempArray2")
 print(tempArray2,'\n')
 
 tempArrayQ = []         #query tf.idf
@@ -128,12 +130,11 @@ bloblistquery = blobers(queries)
 for q in queries:
     qsplit = q.split()
     for x,s in enumerate(qsplit):
-        idf = sum(1 for blob in bloblist if s in blob.words)
-        idf = math.log(len(bloblist)/(1 + idf))
+        print("\ntf: "+str(idf))
         for i, blob in enumerate(bloblistquery):
             tf = blob.words.count(s)
             print(tf)
-            tfidf = tf*idf
+            tfidf = tf*IDF
             tempArrayQ.append(tfidf)
             
 print(tempArrayQ)
@@ -164,7 +165,7 @@ def deploy2(docNo):
         for i in range(countrs):
             if n==i:
                 print(x+1,i+1, tempArray2[x][i])
-                total+=tempArray2[x][i]**2
+                total+=(tempArray2[x][i])**2
                 break
     return total
 
@@ -177,29 +178,31 @@ total=0
 for x in tempArrayQ:
     total+=x**2
 
+print("finding frequencies")
+
 for a in range(countrs):
     print("\nD"+str(a))
     #this is Document 1 tf idf
-    dotTotal+=deploy(a+1) #deploy(query, whichDoc) in this case we use query 1 and doc 1
+    dotTotal+=deploy(a+1) #deploy(whichDoc) in this case we use query 1 and doc 1
     print("\ndot total "+str(dotTotal))
     #P.S you can control the deploy value to search through docs with defined queries before
 
-    temp=[]
+temp=[]
     
-    qS = math.sqrt(total)
-    dS = math.sqrt(deploy2(a+1))
-    print("\n"+str(total))
-    print("qs "+str(qS))
-    print("ds "+str(dS))
-    dotS = dotTotal/(qS*dS)
+qS = math.sqrt(total)
+dS = math.sqrt(deploy2(a+1))
+print("\n"+str(total))
+print("qs "+str(qS))
+print("ds "+str(dS))
+dotS = dotTotal/(qS*dS)
 
-    #Cosine Similarity Result
-    print("\n"+str(dotS))
-    temp.append("D"+str(a+1))
-    temp.append(dotS)
-    cos.append(temp)
-    temp=[]
-    dotTotal=0
+#Cosine Similarity Result
+print("\n"+str(dotS))
+temp.append("D"+str(a+1))
+temp.append(dotS)
+cos.append(temp)
+temp=[]
+dotTotal=0
 
 cos.sort(key=lambda x:x[1], reverse=True)
 print(cos)
