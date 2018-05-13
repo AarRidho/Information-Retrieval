@@ -91,11 +91,11 @@ def safe_div(x,y):
 print(tempCorpus)
 
 #queries
-query = 'kontur tanah dan udara lebih baik'
-query2 = 'istri anda di rumah'
-query3 = 'rumah saya ada di tangerang selatan'
-query4 = 'rumah aar ada istri'
-query5 = 'istri aar di tilang'
+#query = 'kontur tanah dan udara lebih baik'
+#query = 'Universitas terbaik di Indonesia'
+#query = 'Persija Jakarta berhasil lolos'
+#query = 'sekolah menengah kejuruan di jakarta'
+query = 'Perkembangan teknologi informasi'
 
 queries = [query]
 
@@ -179,7 +179,7 @@ print(tempLastDict)
 _excel = sorted(tempLastDict.items(), key=operator.itemgetter(1),reverse=True)
 print(_excel)
 
-workbook = xlsxwriter.Workbook('cosineq1.xlsx')
+workbook = xlsxwriter.Workbook('cosineq5.xlsx')
 worksheet = workbook.add_worksheet()
 
 row=0
