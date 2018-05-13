@@ -104,7 +104,7 @@ for q in queries:
         counter = 0
         idf = sum(1 for blob in bloblist if s in blob.words)
         print(idf)
-        idf = math.log(len(bloblist)/1 + idf)
+        idf = math.log(len(bloblist)/(1 + idf))
         tempIdf.append(idf)
         print('idf(', s,'): ', idf)
         print(s,'\ntf:')
@@ -129,7 +129,7 @@ for q in queries:
     qsplit = q.split()
     for x,s in enumerate(qsplit):
         idf = sum(1 for blob in bloblist if s in blob.words)
-        idf = math.log(len(bloblist)/1 + idf)
+        idf = math.log(len(bloblist)/(1 + idf))
         for i, blob in enumerate(bloblistquery):
             tf = blob.words.count(s)
             print(tf)
